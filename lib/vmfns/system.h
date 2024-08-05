@@ -88,6 +88,15 @@ void eval(int instr, int v1, int v2)
         }
         printRegisters();
         break;
+    case INC:
+        registers[-v1]++;
+        printRegisters();
+        break;
+    case DEC:
+        registers[-v1]--;
+        printRegisters();
+        break;
+
     case ADD:
         if (v1>=0)
         {
@@ -127,6 +136,14 @@ void eval(int instr, int v1, int v2)
             registers[1] -= v2;
         }
         printRegisters();
+        break;
+    case MOVX:
+        if (v1 < 0 && v1 != -3)
+        {
+            registers[-v1] = memory[registers[-3]];
+        }else{
+            printf("BAD REGISTER");
+        }
         break;
     default:
         break;

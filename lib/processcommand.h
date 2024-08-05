@@ -59,6 +59,48 @@ void processCommand(CommandBuffer * cmdBuff){
         }
     }
     
+    else if( strcmp(cmdBuff->tokens[0].content,"INC") == 0 ){
+        if (cmdBuff->tokencount == 2 && strcmp(cmdBuff->tokens[1].content,"") != 0 )
+        {
+            if (getRegister(cmdBuff->tokens[1].content) != 0)
+            {
+                run(INC,getRegister(cmdBuff->tokens[1].content),0);
+            }else{
+                printf("NO SUCH REGISTER");
+            }
+        }else{
+            printf("VALUE EXPECTED");
+        }
+    }
+
+    else if( strcmp(cmdBuff->tokens[0].content,"DEC") == 0 ){
+        if (cmdBuff->tokencount == 2 && strcmp(cmdBuff->tokens[1].content,"") != 0 )
+        {
+            if (getRegister(cmdBuff->tokens[1].content) != 0)
+            {
+                run(DEC,getRegister(cmdBuff->tokens[1].content),0);
+            }else{
+                printf("NO SUCH REGISTER");
+            }
+        }else{
+            printf("VALUE EXPECTED");
+        }
+    }
+
+    else if( strcmp(cmdBuff->tokens[0].content,"MOVX") == 0 ){
+        if (cmdBuff->tokencount == 2 && strcmp(cmdBuff->tokens[1].content,"") != 0 )
+        {
+            if (getRegister(cmdBuff->tokens[1].content) != 0)
+            {
+                run(MOVX,getRegister(cmdBuff->tokens[1].content),0);
+            }else{
+                printf("NO SUCH REGISTER");
+            }
+        }else{
+            printf("VALUE EXPECTED");
+        }
+    }
+
     else if( strcmp(cmdBuff->tokens[0].content,"ADD") == 0 ){
         if (cmdBuff->tokencount == 3 && strcmp(cmdBuff->tokens[1].content,"") != 0 && strcmp(cmdBuff->tokens[2].content,"") != 0 )
         {

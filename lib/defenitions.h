@@ -14,6 +14,8 @@
 #define MOV 8
 #define MOVX 9
 #define SUB 10
+#define INC 11
+#define DEC 12
 
 // --------REGISTERS--------
 #define A -1
