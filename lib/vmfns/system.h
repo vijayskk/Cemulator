@@ -38,8 +38,8 @@ int run(int instr, int v1, int v2)
 
 void eval(int instr, int v1, int v2)
 {
-    if (instr == START)
-    {
+    if (instr == START && !isRunning)
+    { 
         start();
     }
     if (instr == STATUS)
